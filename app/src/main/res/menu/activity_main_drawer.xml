@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:title="Trier par :">
+        <menu>
+            <item
+                android:id="@+id/nav_sort_artist"
+                android:title="    Artist (a-z)" />
+            <item
+                android:id="@+id/nav_sort_music"
+                android:title="    Music (a-z)" />
+            <item
+                android:id="@+id/nav_sort_style"
+                android:title="    Music style" />
+        </menu>
+    </item>
+
+    <!--
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/people"
+            android:icon="@drawable/ic_people_black_24dp"
+            android:title="people" />
+    </group>
+    -->
+
+</menu>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".addBis"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/addBis_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Put here the musics infomations someone shared to you"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:layout_alignParentTop="true"/>
+
+    <EditText
+        android:id="@+id/addBis_musicInformations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Musics informations..."
+        android:gravity="start"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_above="@+id/addBis_import"
+        android:layout_below="@+id/addBis_textView"/>
+
+
+    <Button
+        android:id="@+id/addBis_import"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Import"
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
