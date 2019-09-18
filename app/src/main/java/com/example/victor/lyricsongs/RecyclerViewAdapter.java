@@ -6,24 +6,15 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
-import java.nio.file.Files;
 import java.util.ArrayList;
-
-import java.io.File;
-import java.io.FileInputStream;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>{
 
@@ -109,6 +100,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                         extra_fileName.trim();
 
                         Boolean deleted = myContext.deleteFile(extra_fileName);
+
+                        //17/09/2019
+                        removeItem(position);   //Pour retirer des listes
+                        notifyItemRemoved(position);
+                        notifyItemRangeChanged(position, al_titles.size());
+                        //17/09/2019
+
                         System.out.println("IsDeleted : " + deleted);
                         notifyDataSetChanged();
                         //??? Il faut appeler iniArrayList mais comment faire ? public puis static
@@ -118,6 +116,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                         //https://stackoverflow.com/questions/31367599/how-to-update-recyclerview-adapter-data
                         //MainActivity mainAct = new MainActivity();
                         //mainAct.recy
+
 
                         Toast.makeText(myContext, delete_alert, Toast.LENGTH_SHORT).show();
                     }

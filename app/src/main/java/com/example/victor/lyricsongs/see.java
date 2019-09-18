@@ -13,8 +13,6 @@ import android.widget.Toast;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
-import java.util.Collection;
-import java.util.Collections;
 
 public class see extends AppCompatActivity {
 
@@ -29,7 +27,7 @@ public class see extends AppCompatActivity {
     //variables
     String music_title = "Song's Title";
     String extra_fileName = "";
-    String readed = "";
+    String read = "";
     String temp_lyrics = "";
 
     @Override
@@ -41,12 +39,14 @@ public class see extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //For the gradient action Bar
+        /*
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.gradient_two));
         }
+        */
 
-        readed = "";
+        read = "";
         temp_lyrics = "";
 
         //title   = findViewById(R.id.see_title);
@@ -122,9 +122,9 @@ public class see extends AppCompatActivity {
             style.setText(splittedData[4]);
 
             temp_lyrics = splittedData[5];
-            while ((readed = br.readLine()) != null){
-                temp_lyrics += "\n" + readed;
-                System.out.println("Readed : " + readed);
+            while ((read = br.readLine()) != null){
+                temp_lyrics += "\n" + read;
+                System.out.println("Readed : " + read);
                 System.out.println("temp_lyrics : " + temp_lyrics);
             }
             lyrics.setText(temp_lyrics);
@@ -136,6 +136,7 @@ public class see extends AppCompatActivity {
 
 
 
+    //Permer de creer la liste avec les informations de la chansons pour pouvoir partager
     public String createList(){
         String stringEmpty = "----";
         String informations = "";

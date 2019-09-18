@@ -171,10 +171,6 @@ public class add extends AppCompatActivity {
         final ArrayAdapter adapterStyles = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, filtered_list_styles);
         style.setAdapter(adapterStyles);
 
-        //System.out.println("Chocolat");
-        //System.out.println("Artists size ::: " + filtered_list_artists.size());
-        //feat.setAdapter(adapter);
-
     }
 
     @Override
@@ -351,10 +347,9 @@ public class add extends AppCompatActivity {
         filename.trim();
 
         //delete old one to avoid duplicated songs
-        if (!extra_fileName.equals(filename)){
-            //??? Retourne tourjours "false"
-            boolean deleted = deleteFile(filename);
-            System.out.println("Fichier supprémié : " + deleted);
+        if (!extra_fileName.equals(filename)) {
+            boolean deleted = deleteFile(extra_fileName);
+            System.out.println("Fichier supprimé : " + deleted);
         }
 
         String fileContents = infos;
